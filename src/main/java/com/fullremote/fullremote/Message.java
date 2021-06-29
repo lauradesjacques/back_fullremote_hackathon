@@ -1,6 +1,5 @@
 package com.fullremote.fullremote;
 
-import java.sql.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,9 +13,18 @@ public class Message {
 	private Long id ;
 	
 	private String description;
-	private Date date;
 	private String langage;
-	private int freelance_sender_id;
+	private Integer freelance_sender_id;
+	
+ public Message (String description, String langage, Integer freelance_sender_id) {
+	 this.description= description;
+	 this.langage=langage;
+	 this.freelance_sender_id= freelance_sender_id;
+	}
+	
+	public Message () {
+		
+	}
 	
 	
 	public Long getId() {
@@ -31,12 +39,7 @@ public class Message {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public Date getDate() {
-		return date;
-	}
-	public void setDate(Date date) {
-		this.date = date;
-	}
+	
 	public String getLangage() {
 		return langage;
 	}
